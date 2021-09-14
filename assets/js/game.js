@@ -8,31 +8,29 @@ var enemyHealth = 50;
 var enemyAttack = 12;
 
 var fight = function(enemyName) {
-}
-  
-window.alert("Welcome To Robot Gladiators!");
-
+    while(enemyHealth > 0) {
+        fight(enemyName[i])
+    }
+    
 var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
     console.log(promptFight);
     if (promptFight === "fight" || promptFight === "FIGHT" || promptFight === "Fight") {
 
-
-
-for(var i = 0; i < enemyNames.length; i++) {
-            console.log(enemyNames[i]);
-            console.log(i);
-            console.log(enemyNames[i] + " is at " + i + " index");
-          }
-
-        enemyHealth = enemyHealth - playerAttack;
-        console.log(
+    enemyHealth = enemyHealth - playerAttack;
+    console.log(
             playerName + " attacked " + enemyNames + ". " + enemyNames + " now has " + enemyHealth + " health remaining."
         );
 
-        if (enemyHealth <= 0) {
-            window.alert(enemyName + " has died!");
+    if (enemyHealth <= 0) {
+       window.alert(enemyName + " has died!");
         } else {
             window.alert(enemyNames + " still has " + enemyHealth + " health left.");
+        }
+
+for(var i = 0; i < enemyNames.length; i++) {
+    var pickedEnemyName = enemyNames[i];
+      enemyHealth = 50;
+      fight(pickedEnemyName);
         }
 
         //remove player's health by subtraing the amount set in the enemyAttack variable
@@ -54,8 +52,9 @@ for(var i = 0; i < enemyNames.length; i++) {
         window.alert("You need to choose a valid option.  Try again!");
     }
     console.log("Your fight function call has ended.")
-
-    for(var i = 0; i < enemyNames.length; i++) {
+    
+for(var i = 0; i < enemyNames.length; i++) {
+    debugger;
     fight(enemyNames[i]);
+    }
 }
-  
